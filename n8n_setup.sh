@@ -20,6 +20,7 @@ if [ ! -f "docker-compose.yml" ]; then
   sudo tee docker-compose.yml > /dev/null <<EOF
 services:
   n8n:
+    container_name: n8n
     image: n8nio/n8n
     restart: unless-stopped
     ports:
