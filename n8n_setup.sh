@@ -18,8 +18,6 @@ cd "$N8N_PROJECT_DIR"
 if [ ! -f "docker-compose.yml" ]; then
   echo "Creando archivo docker-compose.yml..."
   sudo tee docker-compose.yml > /dev/null <<EOF
-version: '3.8'
-
 services:
   n8n:
     image: n8nio/n8n
