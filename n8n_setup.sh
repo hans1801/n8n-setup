@@ -30,7 +30,7 @@ services:
       - WEBHOOK_URL=https://${N8N_DOMAIN}/
       - WEBHOOK_TUNNEL_URL=https://${N8N_DOMAIN}/
     volumes:
-      - ./data:/root/.n8n
+      - ./data:/home/node/.n8n
 EOF
   echo "Archivo docker-compose.yml creado."
 else
@@ -41,6 +41,11 @@ echo
 echo "Ejecutando doker compose..."
 cd ~/n8n-docker && sudo docker compose up -d
 
+# Instrucción para actualizar n8n
 echo
-echo "Para cambiar el dominio, edita docker-compose.yml y reinicia con:"
-echo "sudo docker compose down && sudo docker compose up -d"
+echo "🔄 Para actualizar n8n a la última versión:"
+echo "1. Ejecuta: sudo docker pull n8nio/n8n"
+echo "2. Luego reinicia el servicio con:"
+echo "   cd $N8N_PROJECT_DIR"
+echo "   sudo docker compose down"
+echo "   sudo docker compose up -d"
